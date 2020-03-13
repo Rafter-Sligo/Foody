@@ -1,55 +1,48 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content color="secondary">
-  <ion-grid class="ion-text-center">
-    <ion-row style="height: 100;">
-      <ion-col >
-        <ion-card color="light" class="card fadeInDown">
+  <ion-grid class="grid">
+    <ion-row>
+      <ion-col>
+        <ion-card color="light" class="card fadeInDown ion-text-center">
           <ion-card-header>
             <ion-row>
               <ion-col>
-                <ion-label>Sign In</ion-label>
+                <a class="page-switch active">Sign In</a>
               </ion-col>
               <ion-col>
-                <ion-label>Sign Up</ion-label>
+                <a class="page-switch" [routerLink]="['/register']" >Sign Up</a>
               </ion-col>
             </ion-row>
           </ion-card-header>
-          <input type="text" id="login" class="fadeIn first" name="login" placeholder="email">
-          <input type="text" id="password" class="fadeIn second" name="login" placeholder="password"> 
-          <ion-footer id="formFooter">
+          <form [formGroup]="credentialsForm" (ngSubmit)="onSubmit()">
+            <ion-input
+              type="text"
+              id="email"
+              class="fadeIn first"
+              placeholder="email"
+            >
+            </ion-input>
+
+            <ion-input
+              type="text"
+              id="password"
+              class="fadeIn second"
+              placeholder="password"
+            >
+            </ion-input>
+
+            <ion-button
+              type="submit"
+              [disabled]="!credentialsForm.valid"
+              (click)="onSubmit"
+              class="fadeIn third"
+              >Log In</ion-button
+            >
+          </form>
+          <ion-footer class="formFooter">
             <ion-label>Forgot Password?</ion-label>
           </ion-footer>
         </ion-card>
       </ion-col>
-      </ion-row>
-      
-  <!-- <ion-card id="formContent">
-    Tabs Titles 
-    <ion-title class="active"> Sign In </ion-title>
-    <ion-title  class="inactive underlineHover">Sign Up </ion-title>
-
-     Icon 
-    <div class="fadeIn first">
-      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
-    </div>
-
-     Login Form 
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
-    </form>
-
-    Remind Passowrd 
-    <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
-    </div>
-
-  </ion-card> -->
-</ion-grid>
+    </ion-row>
+  </ion-grid>
 </ion-content>

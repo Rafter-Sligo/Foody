@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
+//Grid
 .grid {
   display: flex;
   flex-direction: column;
@@ -8,22 +9,51 @@
 }
 
 .card {
-  padding: 60px;
+  padding-right: 60px;
+  padding-left: 60px;
   border-radius: 20px;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 
-input[type=text] {
-  background-color: blue($color: #000000);
-  border: none;
-  color: #0d0d0d;
-  padding: 15px 32px;
-  text-align: center;
+.formFooter {
+  border-top: 1px solid #000000;
+  padding: 20px;
+  // background-color: lightgreen;
+  // -webkit-border-radius: 0 0 10px 10px;
+  // border-radius: 0 0 10px 10px;
+  // width: 100% !important;
+}
+
+.active {
+  color: black;
+  border-bottom: 2px solid #5fbae9;
+  
+}
+
+.page-switch{
   text-decoration: none;
-  display: inline-block;
+  color: black;
+}
+
+
+//Button Submit
+ion-button[type='submit'] {
+  width: 100% !important;
+  margin-top: 20px;
+  
+}
+
+
+
+
+// Input Text
+ion-input[type='text'] {
+  background-color: white;
+  text-decoration: none;
   font-size: 16px;
   margin: 5px;
-  width: 85%;
-  border: 2px solid #f6f6f6;
+
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
@@ -33,15 +63,16 @@ input[type=text] {
   border-radius: 5px 5px 5px 5px;
 }
 
-input[type=text]:focus {
+ion-input[type='text']:focus {
   background-color: #fff;
   border-bottom: 2px solid #5fbae9;
 }
 
-input[type=text]:placeholder {
+ion-input[type='text']:placeholder {
   color: #cccccc;
 }
 
+//Animations
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
@@ -75,4 +106,68 @@ input[type=text]:placeholder {
     -webkit-transform: none;
     transform: none;
   }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  opacity: 0;
+  -webkit-animation: fadeIn ease-in 1;
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+.fadeIn.first {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.fadeIn.second {
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.fadeIn.third {
+  -webkit-animation-delay: 0.8s;
+  -moz-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.fadeIn.fourth {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
 }
