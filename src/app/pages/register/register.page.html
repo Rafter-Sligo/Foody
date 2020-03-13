@@ -1,0 +1,38 @@
+<ion-content color="secondary">
+  <ion-grid  class="grid ion-text-center">
+    <ion-row style="height: 100;">
+      <ion-col>
+        <ion-card color="light" class="card fadeInDown">
+          <ion-card-header>
+            <ion-row>
+              <ion-col>
+                <a class="page-switch" [routerLink]="['/login']">Sign In</a>
+              </ion-col>
+              <ion-col>
+                <a class="page-switch active">Sign Up</a>
+              </ion-col>
+            </ion-row>
+          </ion-card-header>
+          <form [formGroup]="credentialsForm" (ngSubmit)="onSubmit()">
+            <ion-input
+              type="text"
+              id="email"
+              class="fadeIn first"
+              placeholder="email"
+            >
+            </ion-input>
+            <ion-input
+              type="text"
+              id="password"
+              class="fadeIn second"
+              placeholder="password"
+            >
+            </ion-input>
+
+            <ion-button type="submit" class="fadeIn third">Register</ion-button>
+          </form>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
