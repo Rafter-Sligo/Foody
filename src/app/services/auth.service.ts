@@ -21,7 +21,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  url = environment.url;
+  url = environment.devurl;
   user = null;
   TOKEN_KEY = 'access_token';
   
@@ -60,6 +60,7 @@ export class AuthService {
   
   // Register  
   register(user) {
+ 
     return this.http.post(`${this.url}/register`, user).pipe(
       catchError(e => {
         this.showAlert(e.error.msg);
@@ -71,13 +72,12 @@ export class AuthService {
 
   //login
   login(credentials) {
-    console.log(credentials);
     return this.http.post(`${this.url}/login`, credentials).pipe(
       tap(res => {
         this.storage.set(this.TOKEN_KEY, res['token']);
         localStorage.setItem('access_token', res['token']);
         this.user = this.helper.decodeToken(res['token']);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/menu']);
       }),
       catchError(e => {
         this.showAlert(e.error.msg);
@@ -102,7 +102,7 @@ export class AuthService {
     alert.then(alert => alert.present());
   }
 
-  // Authoizerd to get into Home page
+
 
   
 }

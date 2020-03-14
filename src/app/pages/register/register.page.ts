@@ -14,7 +14,6 @@ import { HttpClientModule } from '@angular/common/http';
 export class RegisterPage implements OnInit {
   credentialsForm: FormGroup;
   
-
   constructor(
     private formBuilder: FormBuilder,
     private _router: Router,
@@ -24,20 +23,21 @@ export class RegisterPage implements OnInit {
 
   ngOnInit() {
     this.credentialsForm = this.formBuilder.group({
-      firstName: [''],
-      lastName: [''],
+      FirstName: [''],
+      LastName: [''],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
-  register() {
+  onSubmit() {
     const newUser: IUser = {
       email: this.credentialsForm.get('email').value,
-      firstName: this.credentialsForm.get('firstName').value,
-      lastName: this.credentialsForm.get('lastName').value,
+      firstName: this.credentialsForm.get('FirstName').value,
+      lastName: this.credentialsForm.get('LastName').value,
       password: this.credentialsForm.get('password').value,
     };
+
     this.authService.register(newUser).subscribe(res => {
       this._router.navigate(['/login']);
     });
