@@ -24,5 +24,7 @@ export class LoginPage implements OnInit {
     });
   }
 
-  onSubmit() {}
+  onSubmit() {
+    console.log('tehc');
+  }
 }

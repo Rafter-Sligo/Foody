@@ -1,9 +1,16 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>orders</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-nav [headerTitle]="'Orders'"></app-nav>
+<ion-content color="dark">
+  <ion-grid class="grid">
+    <ion-row>
+      <ion-col>
+        <ion-card class="card" color="light">
+        <ion-item>
+            <ion-title color="medium" >Pending</ion-title>
 
-<ion-content>
-
+            <ion-title color="medium">Completed</ion-title>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

@@ -16,8 +16,10 @@
   padding-top: 30px;
 }
 
+
+
 .formFooter {
-  border-top: 1px solid #000000;
+  border-top: 1px solid #808080;
   padding: 20px;
   // background-color: lightgreen;
   // -webkit-border-radius: 0 0 10px 10px;
@@ -27,13 +29,14 @@
 
 .active {
   color: black;
-  border-bottom: 2px solid #5fbae9;
-  
+  border-bottom: 2px solid #2fdf75;
+  padding-bottom: 4px;
 }
 
 .page-switch{
   text-decoration: none;
-  color: black;
+  color: #808080;
+  font-size: large;
 }
 
 
@@ -41,15 +44,15 @@
 ion-button[type='submit'] {
   width: 100% !important;
   margin-top: 20px;
-  
+
 }
 
 
 
 
 // Input Text
-ion-input[type='text'] {
-  background-color: white;
+ion-input{
+
   text-decoration: none;
   font-size: 16px;
   margin: 5px;
@@ -63,13 +66,14 @@ ion-input[type='text'] {
   border-radius: 5px 5px 5px 5px;
 }
 
-ion-input[type='text']:focus {
+ion-input:focus {
   background-color: #fff;
   border-bottom: 2px solid #5fbae9;
 }
 
-ion-input[type='text']:placeholder {
-  color: #cccccc;
+ion-input:placeholder {
+  color: #808080;
+  padding: 4px 4px 4px 4px;
 }
 
 //Animations
