@@ -18,6 +18,7 @@
               style="background-color: #222428;"
               type="text"
               id="email"
+              formControlName="email"
               class="fadeIn first"
               placeholder="Email"
               name="email"
@@ -28,6 +29,7 @@
               style="background-color: #222428;"
               type="password"
               id="password"
+              formControlName="password"
               class="fadeIn second"
               placeholder="Password"
               name="Password"
@@ -36,8 +38,7 @@
 
             <ion-button
               type="submit"
-              [disabled]="!credentialsForm.valid"
-              (click)="onSubmit()"
+              [disabled]="!credentialsForm.valid" 
               class="fadeIn third"
               color="success"
               >Log In</ion-button

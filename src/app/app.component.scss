@@ -1,3 +1,15 @@
+img{
+  margin: 10%;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.noHeight{
+  --min-height: 0px;
+}
+
+
+
 ion-menu ion-content {
   --background: var(--ion-item-background, var(--ion-background-color, #fff));
 }
