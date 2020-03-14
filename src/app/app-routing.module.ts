@@ -27,6 +27,10 @@ const routes: Routes = [
   {
     path: 'saved-foods',
     loadChildren: () => import('./pages/saved-foods/saved-foods.module').then( m => m.SavedFoodsPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
   }
 
 

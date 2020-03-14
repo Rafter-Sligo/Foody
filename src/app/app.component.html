@@ -3,14 +3,20 @@
     <ion-menu swipe-gesture="false" contentId="menu-content">
       <ion-content color="medium">
         <ion-menu-toggle class="border-none">
-          <ion-item lines="none" color="dark">
-            <ion-img
-              style="height: 50px; width: 50px;"
-              src="assets/fitleet-logo.png"
-              class="logo"
-            ></ion-img>
-            <ion-title class="ion-text-center" color="light">Menu</ion-title>
+          <ion-item lines="none" color="dark" class="noHeight" [routerLink]="['/profile']">
+            <img
+              alt="Profile Picture"
+              src="https://m.belfasttelegraph.co.uk/migration_catalog/e9e38/25623532.ece/AUTOCROP/w300/adams"
+              class="profile"
+            >
+
+            <ion-item lines="none" color="dark" class="noHeight">
+              <ion-label class="ion-text-center" color="light"
+                >Mark Rafter</ion-label
+              >
+            </ion-item>
           </ion-item>
+
           <ion-item
             color="medium"
             [routerLink]="['/menu']"

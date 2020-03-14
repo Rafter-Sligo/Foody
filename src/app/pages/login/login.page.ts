@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,8 @@ export class LoginPage implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
@@ -25,6 +28,6 @@ export class LoginPage implements OnInit {
   }
 
   onSubmit() {
-    console.log('tehc');
+    this.authService.login(this.credentialsForm.value).subscribe();
   }
 }
