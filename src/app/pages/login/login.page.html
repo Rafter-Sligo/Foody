@@ -1,44 +1,49 @@
-<ion-content color="secondary">
+<ion-content color="dark">
   <ion-grid class="grid">
     <ion-row>
       <ion-col>
-        <ion-card color="light" class="card fadeInDown ion-text-center">
+        <ion-card color="medium" class="card fadeInDown ">
           <ion-card-header>
             <ion-row>
               <ion-col>
                 <a class="page-switch active">Sign In</a>
               </ion-col>
               <ion-col>
-                <a class="page-switch" [routerLink]="['/register']" >Sign Up</a>
+                <a class="page-switch" [routerLink]="['/register']">Sign Up</a>
               </ion-col>
             </ion-row>
           </ion-card-header>
           <form [formGroup]="credentialsForm" (ngSubmit)="onSubmit()">
             <ion-input
+              style="background-color: #222428;"
               type="text"
               id="email"
               class="fadeIn first"
-              placeholder="email"
+              placeholder="Email"
+              name="email"
             >
             </ion-input>
 
             <ion-input
-              type="text"
+              style="background-color: #222428;"
+              type="password"
               id="password"
               class="fadeIn second"
-              placeholder="password"
+              placeholder="Password"
+              name="Password"
             >
             </ion-input>
 
             <ion-button
               type="submit"
               [disabled]="!credentialsForm.valid"
-              (click)="onSubmit"
+              (click)="onSubmit()"
               class="fadeIn third"
+              color="success"
               >Log In</ion-button
             >
           </form>
-          <ion-footer class="formFooter">
+          <ion-footer class="formFooter ion-text-center">
             <ion-label>Forgot Password?</ion-label>
           </ion-footer>
         </ion-card>

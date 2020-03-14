@@ -1,9 +1,9 @@
 <ion-app>
   <ion-split-pane contentId="menu-content">
     <ion-menu swipe-gesture="false" contentId="menu-content">
-      <ion-content>
+      <ion-content color="medium">
         <ion-menu-toggle class="border-none">
-          <ion-item lines="none" color="secondary">
+          <ion-item lines="none" color="dark">
             <ion-img
               style="height: 50px; width: 50px;"
               src="assets/fitleet-logo.png"
@@ -11,42 +11,55 @@
             ></ion-img>
             <ion-title class="ion-text-center" color="light">Menu</ion-title>
           </ion-item>
-          <ion-item [routerLink]="['/home']" routerDirection="forward">
-            <ion-icon
-              color="light"
-              class="ion-padding-end"
-              name="home"
-            ></ion-icon
-            ><ion-label>Home</ion-label>
-          </ion-item>
-          <ion-item [routerLink]="['/profile']" routerDirection="forward">
-            <ion-icon
-              color="light"
-              class="ion-padding-end"
-              name="person"
-            ></ion-icon
-            ><ion-label>Profile</ion-label>
-          </ion-item>
-          <ion-item [routerLink]="['/food-diary']" routerDirection="forward">
-            <ion-icon
-              color="light"
-              class="ion-padding-end"
-              name="pizza"
-            ></ion-icon
-            ><ion-label>Food</ion-label>
-          </ion-item>
           <ion-item
-            [routerLink]="['/workout-tracker']"
+            color="medium"
+            [routerLink]="['/menu']"
             routerDirection="forward"
           >
             <ion-icon
-              color="light"
+              color="success"
               class="ion-padding-end"
-              name="fitness"
+              name="home-outline"
             ></ion-icon
-            ><ion-label>Workout</ion-label>
+            ><ion-label>Home</ion-label>
           </ion-item>
-          <ion-item [routerLink]="['/pedometer']" routerDirection="forward">
+          <ion-item
+            color="medium"
+            [routerLink]="['/orders']"
+            routerDirection="forward"
+          >
+            <ion-icon
+              color="success"
+              class="ion-padding-end"
+              src="../../../assets/notes.svg"
+            ></ion-icon
+            ><ion-label>Orders</ion-label>
+          </ion-item>
+          <ion-item
+            color="medium"
+            [routerLink]="['/search']"
+            routerDirection="forward"
+          >
+            <ion-icon
+              color="success"
+              class="ion-padding-end"
+              name="search-outline"
+            ></ion-icon
+            ><ion-label>Search</ion-label>
+          </ion-item>
+          <ion-item
+            color="medium"
+            [routerLink]="['/saved-foods']"
+            routerDirection="forward"
+          >
+            <ion-icon
+              color="success"
+              class="ion-padding-end"
+              name="bookmark-outline"
+            ></ion-icon
+            ><ion-label>Liked Foods</ion-label>
+          </ion-item>
+          <!-- <ion-item color="medium" [routerLink]="['/pedometer']" routerDirection="forward">
             <ion-icon
               color="light"
               class="ion-padding-end"
@@ -54,26 +67,29 @@
             ></ion-icon
             ><ion-label>Pedometer</ion-label>
           </ion-item>
-          <ion-item  [routerLink]="['/rest-timer']" routerDirection="forward">
+          <ion-item  color="medium" [routerLink]="['/rest-timer']" routerDirection="forward">
             <ion-icon
               color="light"
               class="ion-padding-end"
               name="timer"
             ></ion-icon
             ><ion-label>Rest Timer</ion-label>
-          </ion-item>
+          </ion-item> -->
         </ion-menu-toggle>
       </ion-content>
-      <ion-footer>
-        <ion-item lines="none" color="primary">
+      <ion-footer color="medium">
+        <ion-item
+          lines="none"
+          color="medium"
+          (click)="CloseMenu()"
+          (click)="Logout()"
+        >
           <ion-icon
-            color="light"
+            color="success"
             class="ion-padding-end"
-            name="log-out"
+            name="log-out-outline"
           ></ion-icon
-          ><ion-label (click)="CloseMenu()" (click)="Logout()"
-            >Logout</ion-label
-          >
+          ><ion-label>Logout</ion-label>
         </ion-item>
       </ion-footer>
     </ion-menu>

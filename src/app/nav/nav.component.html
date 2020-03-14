@@ -1,16 +1,35 @@
-<ion-header>
-  <ion-toolbar color="secondary" >
-    <ion-item color="secondary" lines="none">
+<ion-header class="ion-no-border">
+  <ion-toolbar color="dark" class="ion-no-border">
+    <ion-item color="dark" lines="none" class="ion-no-border">
       <ion-menu-button color="light">
-        <ion-icon slot="start"  name="menu"></ion-icon>
+        <ion-icon slot="start" name="menu"></ion-icon>
       </ion-menu-button>
-      <ion-title color="light" >{{ headerTitle }}</ion-title>
-      <!--Get an item at the end of the Navbar-->
-      <!-- <ion-button class="ion-text-end" color="primary" *ngIf="headerTitle == 'Home'" >
-        Login
-      </ion-button> -->
+      <ion-title color="light">{{ headerTitle }}</ion-title>
+
+      <!--Get an item at the end of the Navbar-->     
+      
+      <!--Search Foods-->
+      <ion-label colour="light" class="ion-text-start" *ngIf="headerTitle == ''">
+        Sligo
+        <ion-icon color="success" name="chevron-down-outline"> </ion-icon
+      ></ion-label>
+      <ion-icon
+        slot="end"
+        name="search-outline"
+        color="success"
+        *ngIf="headerTitle == ''"
+      >
+      </ion-icon>
+      <ion-icon
+        slot="end"
+        src="../../../assets/filter.svg"
+        color="success"
+        *ngIf="headerTitle == ''"
+      >
+      </ion-icon>
+      
+      <!--Liked Foods-->
+      
     </ion-item>
-
-
   </ion-toolbar>
 </ion-header>

@@ -1,8 +1,8 @@
-<ion-content color="secondary">
-  <ion-grid  class="grid ion-text-center">
+<ion-content color="dark">
+  <ion-grid class="grid ion-text-center">
     <ion-row style="height: 100;">
       <ion-col>
-        <ion-card color="light" class="card fadeInDown">
+        <ion-card color="medium" class="card fadeInDown">
           <ion-card-header>
             <ion-row>
               <ion-col>
@@ -15,21 +15,44 @@
           </ion-card-header>
           <form [formGroup]="credentialsForm" (ngSubmit)="onSubmit()">
             <ion-input
+              style="background-color: #222428;"
               type="text"
               id="email"
               class="fadeIn first"
-              placeholder="email"
-            >
-            </ion-input>
-            <ion-input
-              type="text"
-              id="password"
-              class="fadeIn second"
-              placeholder="password"
+              placeholder="Email"
             >
             </ion-input>
 
-            <ion-button type="submit" class="fadeIn third">Register</ion-button>
+            <ion-input
+              style="background-color: #222428;"
+              type="text"
+              id="FirstName"
+              class="fadeIn first"
+              placeholder="First Name"
+            >
+            </ion-input>
+
+            <ion-input
+              style="background-color: #222428;"
+              type="text"
+              id="LastName"
+              class="fadeIn first"
+              placeholder="Last Name"
+            >
+            </ion-input>
+
+            <ion-input
+              style="background-color: #222428;"
+              type="password"
+              id="password"
+              class="fadeIn second"
+              placeholder="Password"
+            >
+            </ion-input>
+
+            <ion-button type="submit" class="fadeIn third" color="success"
+              >Register</ion-button
+            >
           </form>
         </ion-card>
       </ion-col>

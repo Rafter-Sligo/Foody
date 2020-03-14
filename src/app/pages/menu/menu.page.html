@@ -1,5 +1,34 @@
-<app-nav [headerTitle]="'Home'" ></app-nav>
+<app-nav [headerTitle]="'Home'"></app-nav>
 
-<ion-content color="primary">
+<ion-content color="dark">
+  <ion-grid class="grid">
+    <ion-row>
+      <ion-col>
+        <ion-card color="medium">
+          <ion-item color="medium" lines="none">Image URL </ion-item>
 
+          <ion-footer>
+            <ion-title>Chicken Tenders</ion-title>
+          </ion-footer>
+          <ion-item color="medium" lines="none"></ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-text-start" style="margin-left: 5%;">
+        <ion-fab-button color="medium">
+          <ion-icon name="close" color="danger"></ion-icon>
+        </ion-fab-button>
+      </ion-col>
+      <ion-col
+        style="margin-left: 50%;
+    text-align: -webkit-center;"
+      >
+        <ion-fab-button color="medium">
+          <ion-icon name="heart" color="success"></ion-icon>
+        </ion-fab-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
