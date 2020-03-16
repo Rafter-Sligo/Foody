@@ -12,7 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class LoginPage implements OnInit {
   credentialsForm: FormGroup;
-
+  showPasswordText:boolean;
+  
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -28,7 +29,7 @@ export class LoginPage implements OnInit {
   }
 
   onSubmit() {
-
     this.authService.login(this.credentialsForm.value).subscribe();
   }
+  
 }

@@ -14,6 +14,7 @@
             </ion-row>
           </ion-card-header>
           <form [formGroup]="credentialsForm" (ngSubmit)="onSubmit()">
+            
             <ion-input
               style="background-color: #222428;"
               type="email"
@@ -39,7 +40,7 @@
               type="text"
               formControlName="LastName"
               id="LastName"
-              class="fadeIn first"
+              class="fadeIn second"
               placeholder="Last Name"
             >
             </ion-input>
