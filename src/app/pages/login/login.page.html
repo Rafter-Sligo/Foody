@@ -14,7 +14,7 @@
             </ion-row>
           </ion-card-header>
           <form [formGroup]="credentialsForm" (ngSubmit)="onSubmit()">
-            
+
             <ion-item  class="ion-no-padding item" color="secondary" lines="none">
               <ion-input
                 style="background-color: #222428; "
@@ -27,16 +27,13 @@
               >
               </ion-input>
             </ion-item>
-
-
-              
-              
+          
             <ion-item color="secondary" class="ion-no-padding" lines="none">
               <ion-input
                 type="text"
                 id="password"
                 formControlName="password"
-                class=" ion-text-start"
+                class=" ion-text-start item-input"
                 placeholder="Password"
                 style="background-color: #222428; "
                 *ngIf="showPasswordText"
@@ -46,7 +43,7 @@
                 type="password"
                 id="password"
                 formControlName="password"
-                class="ion-text-start"
+                class="ion-text-start item-input"
                 placeholder="Password"
                 style="background-color: #222428;  "
                 *ngIf="!showPasswordText"
@@ -55,12 +52,13 @@
               <button
                 ion-button
                 clear
-                style="background-color: #222428;"
+                style="background-color: #222428; outline: none;"
                 type="button"
                 class="ion-item-right"
                 (click)="showPasswordText = !showPasswordText"
               >
-                <ion-icon name="eye-off-outline" size="small" color="light"> </ion-icon>
+                <ion-icon name="eye-off-outline" *ngIf="!showPasswordText" size="small" color="light"> </ion-icon>
+                <ion-icon name="eye-outline" *ngIf="showPasswordText" size="small" color="light"> </ion-icon>
               </button>
             </ion-item>
 
@@ -72,8 +70,8 @@
               >Log In</ion-button
             >
           </form>
-          <ion-footer class="formFooter ion-text-center">
-            <ion-label>Forgot Password?</ion-label>
+          <ion-footer class="formFooter page-switch ion-text-center">
+            <a [routerLink]="['/reset-password']" class="password-reset">Forgot Password?</a>
           </ion-footer>
         </ion-card>
       </ion-col>

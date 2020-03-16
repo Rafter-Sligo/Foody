@@ -34,6 +34,10 @@ const routes: Routes = [
   },  {
     path: 'search-filter',
     loadChildren: () => import('./pages/search-filter/search-filter.module').then( m => m.SearchFilterPageModule)
+  },
+  {
+    path: 'reset-password',
+    loadChildren: () => import('./pages/reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
   }
 
 

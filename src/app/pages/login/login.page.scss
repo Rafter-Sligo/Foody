@@ -2,8 +2,11 @@
 
 .item {
 
-  margin-bottom: 5px !important;
+  margin-bottom: 15px !important;
 }
+
+
+
 //Grid
 .grid {
   display: flex;
@@ -20,7 +23,10 @@
   padding-top: 30px;
 }
 
-
+.password-reset{
+  text-decoration: none;
+  color: #808080;
+}
 
 .formFooter {
   
@@ -39,7 +45,6 @@
 
 .page-switch{
   text-decoration: none;
-
   color: #808080;
   font-size: large;
 }
