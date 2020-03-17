@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
+.item {
+
+  margin-bottom: 15px !important;
+}
+
+
+
 //Grid
 .grid {
   display: flex;
@@ -16,12 +23,15 @@
   padding-top: 30px;
 }
 
-
+.password-reset{
+  text-decoration: none;
+  color: #808080;
+}
 
 .formFooter {
-  border-top: 1px solid #808080;
+  
   padding: 20px;
-  // background-color: lightgreen;
+  // background-color: lightgreen;*
   // -webkit-border-radius: 0 0 10px 10px;
   // border-radius: 0 0 10px 10px;
   // width: 100% !important;
@@ -47,7 +57,13 @@ ion-button[type='submit'] {
 
 }
 
+ion-input[type=password]::placeholder{
+  color: #808080;
+}
 
+ion-input{
+  color: white;
+}
 
 
 // Input Text

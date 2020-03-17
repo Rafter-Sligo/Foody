@@ -1,10 +1,10 @@
-<ion-content color="dark">
+<ion-content color="dark" fullscreen>
   <ion-grid class="grid">
     <ion-row>
       <ion-col>
         <ion-card color="medium" class="card fadeInDown ">
-          <ion-card-header>
-            <ion-row>
+          <ion-card-header class="item">
+            <ion-row >
               <ion-col>
                 <a class="page-switch active">Sign In</a>
               </ion-col>
@@ -14,38 +14,64 @@
             </ion-row>
           </ion-card-header>
           <form [formGroup]="credentialsForm" (ngSubmit)="onSubmit()">
-            <ion-input
-              style="background-color: #222428;"
-              type="text"
-              id="email"
-              formControlName="email"
-              class="fadeIn first"
-              placeholder="Email"
-              name="email"
-            >
-            </ion-input>
 
-            <ion-input
-              style="background-color: #222428;"
-              type="password"
-              id="password"
-              formControlName="password"
-              class="fadeIn second"
-              placeholder="Password"
-              name="Password"
-            >
-            </ion-input>
+            <ion-item  class="ion-no-padding item" color="secondary" lines="none">
+              <ion-input
+                style="background-color: #222428; "
+                type="email"
+                id="email"
+                formControlName="email"
+                class="fadeIn first"
+                placeholder="Email"
+                name="email"
+              >
+              </ion-input>
+            </ion-item>
+          
+            <ion-item color="secondary" class="ion-no-padding" lines="none">
+              <ion-input
+                type="text"
+                id="password"
+                formControlName="password"
+                class=" ion-text-start item-input"
+                placeholder="Password"
+                style="background-color: #222428; "
+                *ngIf="showPasswordText"
+              ></ion-input>
+
+              <ion-input
+                type="password"
+                id="password"
+                formControlName="password"
+                class="ion-text-start item-input"
+                placeholder="Password"
+                style="background-color: #222428;  "
+                *ngIf="!showPasswordText"
+              ></ion-input>
+
+              <button
+                ion-button
+                clear
+                style="background-color: #222428; outline: none;"
+                type="button"
+                class="ion-item-right"
+                (click)="showPasswordText = !showPasswordText"
+              >
+                <ion-icon name="eye-off-outline" *ngIf="!showPasswordText" size="small" color="light"> </ion-icon>
+                <ion-icon name="eye-outline" *ngIf="showPasswordText" size="small" color="light"> </ion-icon>
+              </button>
+            </ion-item>
 
             <ion-button
               type="submit"
-              [disabled]="!credentialsForm.valid" 
-              class="fadeIn third"
+              [disabled]="!credentialsForm.valid"
+              class="fadeIn second"
               color="success"
               >Log In</ion-button
             >
           </form>
-          <ion-footer class="formFooter ion-text-center">
-            <ion-label>Forgot Password?</ion-label>
+          <ion-footer class="formFooter page-switch ion-text-center">
+            <a [routerLink]="['/reset-password']" class="password-reset">Forgot Password?</a>
           </ion-footer>
         </ion-card>
       </ion-col>
