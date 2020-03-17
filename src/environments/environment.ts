@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   url: 'https://fitleet.herokuapp.com',
-  devurl: 'http://localhost:69/api'
+  devurl: 'http://localhost:5000/api'
 };
 
 /*
