@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-reset',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reset.page.scss'],
 })
 export class ResetPage implements OnInit {
-
-  constructor() { }
+  token: string;
+  
+  constructor(
+    private active: ActivatedRoute,
+    private _authService: AuthService
+  ) { }
+  
+  checkToken() {
+    this._authService.VerifyUser(this.token).subscribe();
+  }
 
   ngOnInit() {
+    this.token = this.active.snapshot.paramMap.get('token');
+    this.checkToken();
+    console.log(this.token)
   }
 
 }
