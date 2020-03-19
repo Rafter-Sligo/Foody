@@ -10,40 +10,34 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 import { from } from 'rxjs';
 
-
 import { IUser } from '../interface/IUsers';
 
 import { Router } from '@angular/router';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
   url = environment.devurl;
   user = null;
   TOKEN_KEY = 'access_token';
-  
+
   constructor(
     private http: HttpClient,
     private helper: JwtHelperService,
     private storage: Storage,
     private plt: Platform,
     private alertController: AlertController,
-    private router: Router,
-
+    private router: Router
   ) {
     this.plt.ready().then(() => {
       this.checkToken();
     });
-   }
-  
-   
-   
-   //check token
-   checkToken() {
-    this.storage.get(this.TOKEN_KEY).then(token => {
+  }
+
+  //check token
+  checkToken() {
+    this.storage.get(this.TOKEN_KEY).then((token) => {
       if (token) {
         let decoded = this.helper.decodeToken(token);
         let isExpired = this.helper.isTokenExpired(token);
@@ -57,12 +51,11 @@ export class AuthService {
       }
     });
   }
-  
-  // Register  
+
+  // Register
   register(user) {
- 
     return this.http.post(`${this.url}/register`, user).pipe(
-      catchError(e => {
+      catchError((e) => {
         this.showAlert(e.error.msg);
         console.log(e.error.msg);
         throw new Error(e);
@@ -73,36 +66,50 @@ export class AuthService {
   //login
   login(credentials) {
     return this.http.post(`${this.url}/login`, credentials).pipe(
-      tap(res => {
+      tap((res) => {
         this.storage.set(this.TOKEN_KEY, res['token']);
         localStorage.setItem('access_token', res['token']);
         this.user = this.helper.decodeToken(res['token']);
         this.router.navigate(['/menu']);
       }),
-      catchError(e => {
+      catchError((e) => {
         this.showAlert(e.error.msg);
         throw new Error(e);
       })
     );
   }
   
+  //Send user Email if they forgot password
+  SendPassword(userEmail){
+    return this.http.post(`${this.url}/forgotpassword`, userEmail).pipe(
+      catchError((e) => {
+        this.showAlert(e.error.msg);
+        console.log(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
+
+  VerifyUser(token){
+    console.log(`${this.url}/resetpassword/${token}`);
+    return this.http.get(`${this.url}/resetpassword/${token}`);
+  }
+  
+  
+  
   //log out
   logout() {
     localStorage.removeItem(this.TOKEN_KEY);
     this.router.navigate(['/login']);
   }
-  
-  //Alert system
+
+  //Alert system to show problems to users
   showAlert(msg) {
     let alert = this.alertController.create({
       message: msg,
       header: 'Error',
       buttons: ['OK'],
     });
-    alert.then(alert => alert.present());
+    alert.then((alert) => alert.present());
   }
-
-
-
-  
 }

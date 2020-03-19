@@ -14,7 +14,6 @@
             </ion-row>
           </ion-card-header>
           <form [formGroup]="credentialsForm" (ngSubmit)="onSubmit()">
-            
             <ion-input
               style="background-color: #222428;"
               type="email"
@@ -55,7 +54,11 @@
             >
             </ion-input>
 
-            <ion-button type="submit"  [disabled]="!credentialsForm.valid" class="fadeIn third" color="success"
+            <ion-button
+              type="submit"
+              [disabled]="!credentialsForm.valid"
+              class="fadeIn third"
+              color="success"
               >Register</ion-button
             >
           </form>

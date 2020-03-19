@@ -31,7 +31,8 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
-  },  {
+  },
+  {
     path: 'search-filter',
     loadChildren: () => import('./pages/search-filter/search-filter.module').then( m => m.SearchFilterPageModule)
   },
@@ -40,7 +41,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
   },
   {
-    path: 'reset',
+    path: 'reset/:token',
     loadChildren: () => import('./pages/reset/reset.module').then( m => m.ResetPageModule)
   }
 

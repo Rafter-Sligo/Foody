@@ -36,6 +36,7 @@ export class RegisterPage implements OnInit {
       firstName: this.credentialsForm.get('FirstName').value,
       lastName: this.credentialsForm.get('LastName').value,
       password: this.credentialsForm.get('password').value,
+      resettoken: ""
     };
 
     this.authService.register(newUser).subscribe(res => {
