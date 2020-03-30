@@ -90,12 +90,32 @@ export class AuthService {
     );
   }
 
+  //To Verify who has answered the email
   VerifyUser(token){
-    console.log(`${this.url}/resetpassword/${token}`);
-    return this.http.get(`${this.url}/resetpassword/${token}`);
+    return this.http.get(`${this.url}/resetpassword/${token}`).pipe(     
+      catchError((e) => {
+        this.showAlert(e.error.msg);
+        console.log(e.error.msg);
+        throw new Error(e);
+      })
+    );
   }
   
+  //get user
+  getUser(token){
+    return this,this.http.get(`${this.url}/getEmail/${token}`).pipe(     
+      catchError((e) => {
+        this.showAlert(e.error.msg);
+        console.log(e.error.msg);
+        throw new Error(e);
+      })
+    );
+  }
   
+  //To SavePasswords
+  SaveUserPassword(){
+    
+  }
   
   //log out
   logout() {

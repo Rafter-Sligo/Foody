@@ -1,20 +1,37 @@
-<ion-header >
+<ion-header>
   <ion-toolbar color="dark">
     <ion-title>Reset Password</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="dark">
-<ion-grid class="grid">
-  <ion-row>
-    <ion-col>
-      
-      <ion-item color="medium">
-        <ion-input
-        placeholder="Enter Password"
-        ></ion-input>
-      </ion-item>
-    </ion-col>
-  </ion-row> 
-</ion-grid>
+  <ion-grid class="grid">
+    <ion-row>
+      <ion-col>
+        <form [formGroup]="credentialsForm" (ngSubmit)="onSubmit()">
+          <ion-row>
+            <ion-col>
+              <ion-item color="medium">
+                <ion-input
+                  type="password"
+                  id="password"
+                  formControlName="password"
+                  class="ion-text-start item-input"
+                  placeholder="Password"
+                  style="background-color: #222428;  "
+                ></ion-input>
+              </ion-item>
+
+              <ion-button
+                type="submit"
+                [disabled]="!credentialsForm.valid"
+                color="success"
+                >Log In</ion-button
+              >
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
